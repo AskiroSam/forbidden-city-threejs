@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#8B1E1E" />
+  <title>故宫 · Forbidden City</title>
+  <script type="module" crossorigin src="/forbidden-city-threejs/assets/index-TE1WhkMM.js"></script>
+  <link rel="stylesheet" crossorigin href="/forbidden-city-threejs/assets/index-BFoxp_VN.css">
+</head>
+<body>
+  <div id="app">
+    <canvas id="c"></canvas>
+
+    <header class="hud top">
+      <h1>故宫</h1>
+      <p class="sub">Forbidden City · 紫禁城</p>
+    </header>
+
+    <div class="hud labels" id="labels">
+      <button type="button" class="chip" data-target="overview">总览</button>
+      <button type="button" class="chip" data-target="meridian">午门</button>
+      <button type="button" class="chip" data-target="bridges">金水桥</button>
+      <button type="button" class="chip" data-target="taihe">太和殿</button>
+      <button type="button" class="chip" data-target="inner">内廷</button>
+    </div>
+
+    <div id="info" class="hud info hidden"></div>
+
+    <footer class="hud bottom">
+      <p>单指旋转 · 双指缩放 · 双指拖移平移</p>
+      <p class="hint">点击建筑可查看名称 · Tap buildings for names</p>
+    </footer>
+
+    <div id="loading">
+      <div class="spinner"></div>
+      <span>加载中… Loading</span>
+    </div>
+  </div>
+
+</body>
+</html>
