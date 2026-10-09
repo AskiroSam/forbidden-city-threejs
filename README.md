@@ -24,7 +24,7 @@ npm run build
 npm run preview
 ```
 
-产物在 `dist/`，由 GitHub Actions 部署到 GitHub Pages。
+产物在 `dist/`。生产站由 `gh-pages` 分支托管（把 `dist/` 内容推上去即可更新 Pages）。
 
 ## 操作 / Controls
 
