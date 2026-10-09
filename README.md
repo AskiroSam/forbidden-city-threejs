@@ -1,30 +1,30 @@
 # 故宫 · Forbidden City（Three.js）
 
-手机可预览的低多边形故宫互动网页：红墙、金顶、中轴线（午门 → 太和门广场 → 太和殿），触控轨道漫游。
+手机可预览的故宫中轴线互动网页：护城河、红墙雉堞、午门、金水桥、三大殿（太和 / 中和 / 保和）、配殿廊庑与内廷示意。触控轨道漫游。
 
-A mobile-friendly, low-poly Forbidden City scene built with Three.js — red walls, golden roofs, central axis (Meridian Gate → courtyard → Hall of Supreme Harmony), touch orbit controls.
+A mobile-friendly Forbidden City scene built with **Vite + Three.js** — moat, merlon walls, Meridian Gate, Golden Water Bridges, the Three Great Halls, side colonnades, and a northern inner-palace hint.
 
-## 本地打开 / Open locally
+## 在线预览 / Live
 
-本项目为**纯静态**站点（无构建步骤）。因使用 ES modules + CDN，请用本地 HTTP 服务打开，不要直接双击 `file://`。
+**https://askirosam.github.io/forbidden-city-threejs/**
+
+用手机浏览器直接打开即可。
+
+## 本地开发 / Dev
 
 ```bash
-cd forbidden-city-threejs
-python3 -m http.server 8080
+npm install
+npm run dev
 ```
 
-然后在浏览器打开：`http://localhost:8080`  
-手机同一局域网可访问：`http://<你的电脑IP>:8080`
+## 构建 / Build
 
-## GitHub Pages 部署说明 / GitHub Pages
+```bash
+npm run build
+npm run preview
+```
 
-1. 将本仓库推送到 GitHub（公开仓库）。
-2. Settings → Pages → Source 选 **Deploy from a branch**，分支 `main`，文件夹 `/ (root)`。
-3. 若仓库名为 `USERNAME.github.io`，站点根路径即为 `https://USERNAME.github.io/`。
-4. 若仓库名为其他名（如 `forbidden-city-threejs`），站点地址为：
-   `https://USERNAME.github.io/forbidden-city-threejs/`
-   - 当前相对路径引用（`./styles.css`、`./main.js`）**已兼容子路径**，一般无需改 `base`。
-5. 等待 1–2 分钟后用手机浏览器打开上述 URL。
+产物在 `dist/`，由 GitHub Actions 部署到 GitHub Pages。
 
 ## 操作 / Controls
 
@@ -33,25 +33,27 @@ python3 -m http.server 8080
 | 旋转 | 单指拖动 | 左键拖动 |
 | 缩放 | 双指捏合 | 滚轮 |
 | 平移 | 双指拖移 | 右键拖动 |
-| 跳转景点 | 底部标签按钮 | 同左 |
+| 跳转景点 | 底部标签 | 同左 |
+| 查看名称 | 轻点建筑 | 点击建筑 |
+
+## 场景内容 / Scene
+
+- 护城河 + 雉堞城墙 + 角楼
+- **午门**（U 形阙台）
+- **金水桥**（五座石桥）
+- **太和门** → **太和殿** → **中和殿** → **保和殿**（递减尺度、汉白玉台基）
+- 东西配殿与廊庑
+- 内廷示意（乾清门 / 乾清宫一带）
+
+几何为程序化示意造型，非官方数字孪生或实景扫描。
 
 ## 技术 / Stack
 
-- [Three.js](https://threejs.org/) r160（jsDelivr CDN）
-- `OrbitControls`（examples/jsm）
-- 无打包工具；`importmap` 加载模块
-
-## 文件 / Files
-
-```
-forbidden-city-threejs/
-├── index.html
-├── main.js
-├── styles.css
-├── README.md
-└── .gitignore
-```
+- Three.js r160 + OrbitControls
+- Vite 5
+- MeshStandardMaterial、阴影、雾效、ACES 色调映射
+- `pixelRatio` 上限 2，兼顾手机性能
 
 ## 许可 / License
 
-示例代码可自由使用与修改。故宫形象为示意几何造型，非官方数字孪生。
+示例代码可自由使用与修改。
