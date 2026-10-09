@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#8B1A1A" />
+  <title>故宫 · Forbidden City — Three.js</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <canvas id="c"></canvas>
+
+    <header class="hud top">
+      <h1>故宫</h1>
+      <p class="sub">Forbidden City · 互动漫游</p>
+    </header>
+
+    <div class="hud labels" id="labels" aria-hidden="true">
+      <button type="button" class="chip" data-target="meridian">午门</button>
+      <button type="button" class="chip" data-target="taihe">太和殿</button>
+      <button type="button" class="chip" data-target="courtyard">太和门广场</button>
+      <button type="button" class="chip" data-target="overview">总览</button>
+    </div>
+
+    <footer class="hud bottom">
+      <p>单指旋转 · 双指缩放 · 双指拖移平移</p>
+      <p class="hint">手机浏览器可全屏预览</p>
+    </footer>
+
+    <div id="loading">
+      <div class="spinner"></div>
+      <span>加载中…</span>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
